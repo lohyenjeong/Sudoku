@@ -1,0 +1,69 @@
+The main method I used to determine the difficulty level of the boards
+in this exercise is the number of iterations that the solver function
+has to undergo in order to solve the puzzle. The larger the number of
+iterations, the harder the puzzle is deemed to be. 
+
+To perform this, a function that overloads the function solve_board is
+created. An integer variable count increments by one with every
+recursion performed by the function solve_board. If the puzzle is
+solvable, the function returns true and the number of recursions taken
+when completed. If the puzzle is not solvable, the function returns
+false. 
+
+Based on the counter, we see that the number of iterations that the
+function solve_board underwent to solve the respective puzzles are: 
+Mystery board 1: 421547
+Mystery board 2: Unsolvable
+Mystery board 3: 14134
+
+From this, we determine that the difficulty level of the boards are:
+Mystery board 1: Very difficult
+Mystery board 2: Unsolvable
+Mystery board 3: Difficult 
+
+However, while this approach will give us the rough approximation of
+the amount of processing required for the computer to solve the
+puzzle with this particular recursion algorithm used to solve the 
+sudoku in this exericse, we should take into consideration the
+limitations of this method in accurately measuring the difficulty level
+of the puzzles.
+
+Some of the limitations are:
+1)The algorithm is one of many that can be potentially used to solve
+this puzzle. A different algorithm might yield a different set of
+results to the one proposed. 
+
+2)This method measures the ease of solving the sudoku for a computer
+and not a person. The method used to solve the sudoku now is a blunt 
+force trial and error method. While this method can be used by
+computers to solve sudokus due to their ability to do high speed 
+arithmetics, this method is not feasible for the typical person. 
+As such, a puzzle that is deemed easy to the computer with this
+algorithm might not be easy to a human.
+
+3)Expanding upon the above two points, this algorithm does not emulate
+a human's ability to choose from a variety of techniques to solve a
+sudoku puzzle at each stage. While an intelligent person will be able
+to decide which is the easiest method to solve for a particular cell
+at every stage, this algorithm forces the computer to continue on a
+trial and error approach, even when there are straight forward 'given
+away' answers e.g. a row with everything filled in less for one
+cell.  
+
+In light of the limitations mentioned above, I believe that a more 
+comprehensive method should be used to measure the difficulty of the
+sudoku puzzles. The method should have the following characteristics:
+1)The algorithm should emulate all the techniques that can be used by
+a human to solve the puzzle. 
+2)The computer should be able to decide after each move which of the
+techniques to employ next to solve the puzzle in the most efficient
+manner.
+3)Each of the techniques should be weighted by how difficult they are
+to use. 
+
+In conclusion, the counter method was used to measure the difficulty
+of the puzzle in this scenario due to the relative ease in
+incorporating it our current algorithm to solve the puzzle. However, a
+more thorough approach should be employed to accurately determine the
+difficulty level of the puzzle. 
+
